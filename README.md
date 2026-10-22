@@ -2,6 +2,8 @@
 
 OGX Studio qualification assessment, **Track 2**. Three responsive Shopify Online Store 2.0 sections recreated from the supplied screenshots and the public Shadow Labs reference. The comparison follows the supplied screenshot because the live site's comparison has since changed.
 
+**[Open the live demonstration](https://therahul-yo.github.io/ogx-shadow-sections/demo/index.html)** · [Validation evidence](VALIDATION.md)
+
 ## Required files
 
 | Section | File | Features |
