@@ -1,0 +1,584 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shadow Labs — Shopify Section Demo</title><style>body{margin:0;background:#050805} .demo-bar{font:13px/1.5 system-ui,sans-serif;color:#c3c9c3;background:#101510;padding:14px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}.demo-bar a{color:#61e36f;margin-right:18px}.demo-notice{font:14px system-ui;color:#ccc;background:#121812;padding:20px;text-align:center}.demo-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;background:#fff;color:#111;border-radius:10px;padding:16px 24px;box-shadow:0 8px 30px #0008;font:14px system-ui}</style></head><body><nav class="demo-bar" aria-label="Demonstration navigation"><span>Shopify Liquid sections · assessment demonstration</span><div><a href="#sl-demo-value-stacks0">Value stacks</a><a href="#sl-demo-transformation1">Transformations</a><a href="#sl-demo-comparasion2">Comparison</a></div></nav><link rel="stylesheet" href="../assets/sl-sections.css">
+<script src="../assets/sl-sections.js" defer="defer"></script>
+
+
+<style>
+  @font-face{font-family:Oswald;src:url(media/oswald-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  #sl-demo-value-stacks0 {
+    --sl-bg: #050805;
+    --sl-text: #ffffff;
+    --sl-muted: #b8b8b8;
+    --sl-accent: #03c52e;
+    --sl-heading-font: Oswald, sans-serif;
+    --sl-body-font: Poppins, sans-serif;
+    --sl-heading-weight: 700;
+    --sl-heading-size: 64px;
+    --sl-body-size: 16px;
+    --sl-width: 1700px;
+    --sl-space-top: 48px;
+    --sl-space-bottom: 48px;
+    --sl-radius: 28px;
+    --sl-gap: 28px;
+  }
+</style>
+
+<section id="sl-demo-value-stacks0" class="sl-section sl-stacks" aria-labelledby="sl-title-demo-value-stacks0" style="--sl-product-columns: 3; --sl-promo-width: 33%; --sl-card-bg: #ffffff; --sl-card-text: #111111; --sl-price: #f02e29;">
+  <div class="sl-container sl-stacks__layout">
+    <div class="sl-stacks__panel">
+      <header class="sl-heading sl-heading--center sl-stacks__heading">
+        <div class="sl-stacks__title"><span class="sl-stacks__badge">MOST POPULAR</span><h2 id="sl-title-demo-value-stacks0">VALUE STACKS</h2></div>
+        <p class="sl-stacks__subtitle"><span>Better together. More results.</span></p>
+      </header>
+      <div class="sl-stacks__products">
+
+
+
+
+<article class="sl-product" data-shopify-editor-block="value-stacks-0">
+
+    <a href="#demo-product-0" class="sl-product__image" aria-label="Mass Builder Stack">
+      <img src="media/mass-builder.png" alt="Mass Builder Stack" loading="lazy">
+    </a>
+    <div class="sl-product__body">
+      <h3><a href="#demo-product-0">Mass Builder Stack</a></h3>
+      <p class="sl-product__description">Your everyday foundation for calorie intake, strength training and muscle-building goals.</p>
+      <sl-product-form data-add-label="ADD TO CART" data-sold-label="SOLD OUT">
+        <form class="sl-product__form" data-demo-cart id="sl-product-demo-value-stacks0-value-stacks-block-0">
+          <div class="sl-product__prices" aria-live="polite">
+            <span class="sl-product__price" data-price>Rs. 2,099</span>
+            <s data-compare>Rs. 2,298</s>
+
+            <span class="sl-product__saving" data-saving>Save <span data-percent>9</span>%</span>
+          </div>
+          <input type="hidden" name="id" value="100">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" name="add" class="sl-button sl-product__add" data-add>ADD TO CART</button>
+        </form>
+      </sl-product-form>
+    </div>
+
+</article>
+
+
+
+
+<article class="sl-product" data-shopify-editor-block="value-stacks-1">
+
+    <a href="#demo-product-1" class="sl-product__image" aria-label="Strength &amp; Size Stack">
+      <img src="media/strength-size.png" alt="Strength &amp; Size Stack" loading="lazy">
+    </a>
+    <div class="sl-product__body">
+      <h3><a href="#demo-product-1">Strength &amp; Size Stack</a></h3>
+      <p class="sl-product__description">A training-focused combination of mass gainer and 250 g creatine monohydrate.</p>
+      <sl-product-form data-add-label="ADD TO CART" data-sold-label="SOLD OUT">
+        <form class="sl-product__form" data-demo-cart id="sl-product-demo-value-stacks0-value-stacks-block-1">
+          <div class="sl-product__prices" aria-live="polite">
+            <span class="sl-product__price" data-price>Rs. 2,499</span>
+            <s data-compare>Rs. 2,698</s>
+
+            <span class="sl-product__saving" data-saving>Save <span data-percent>7</span>%</span>
+          </div>
+          <input type="hidden" name="id" value="101">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" name="add" class="sl-button sl-product__add" data-add>ADD TO CART</button>
+        </form>
+      </sl-product-form>
+    </div>
+
+</article>
+
+
+
+
+<article class="sl-product" data-shopify-editor-block="value-stacks-2">
+
+    <a href="#demo-product-2" class="sl-product__image" aria-label="Ultimate Bulk">
+      <img src="media/ultimate-bulk.png" alt="Ultimate Bulk" loading="lazy">
+    </a>
+    <div class="sl-product__body">
+      <h3><a href="#demo-product-2">Ultimate Bulk</a></h3>
+      <p class="sl-product__description">A premium bulking combination for athletes looking to increase calorie intake.</p>
+      <sl-product-form data-add-label="ADD TO CART" data-sold-label="SOLD OUT">
+        <form class="sl-product__form" data-demo-cart id="sl-product-demo-value-stacks0-value-stacks-block-2">
+          <div class="sl-product__prices" aria-live="polite">
+            <span class="sl-product__price" data-price>Rs. 2,599</span>
+            <s data-compare>Rs. 2,798</s>
+
+            <span class="sl-product__saving" data-saving>Save <span data-percent>7</span>%</span>
+          </div>
+          <input type="hidden" name="id" value="102">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" name="add" class="sl-button sl-product__add" data-add disabled>SOLD OUT</button>
+        </form>
+      </sl-product-form>
+    </div>
+
+</article>
+
+
+
+      </div>
+    </div>
+
+      <aside class="sl-stacks__promo">
+        <img src="media/stacks-promo.png" alt="Athlete holding a shaker in green gym lighting" loading="lazy" class="sl-stacks__promo-image">
+        <div class="sl-stacks__promo-content">
+          <h3>“CONSISTENCY<br />
+CREATES<br />
+RESULTS”</h3>
+
+          <a class="sl-stacks__explore" href="#sl-demo-value-stacks0">EXPLORE STACKS<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M4 12h16m-6-6 6 6-6 6"/>
+
+</svg>
+</a>
+        </div>
+      </aside>
+
+  </div>
+</section>
+
+
+<link rel="stylesheet" href="../assets/sl-sections.css">
+<script src="../assets/sl-sections.js" defer="defer"></script>
+
+
+<style>
+  @font-face{font-family:Oswald;src:url(media/oswald-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  #sl-demo-transformation1 {
+    --sl-bg: #050805;
+    --sl-text: #ffffff;
+    --sl-muted: #b8b8b8;
+    --sl-accent: #42dd58;
+    --sl-heading-font: Oswald, sans-serif;
+    --sl-body-font: Poppins, sans-serif;
+    --sl-heading-weight: 700;
+    --sl-heading-size: 42px;
+    --sl-body-size: 16px;
+    --sl-width: 1700px;
+    --sl-space-top: 64px;
+    --sl-space-bottom: 64px;
+    --sl-radius: 28px;
+    --sl-gap: 28px;
+  }
+</style>
+
+<section id="sl-demo-transformation1" class="sl-section sl-transform" aria-labelledby="sl-title-demo-transformation1" style="--sl-columns: 3;">
+  <div class="sl-container">
+    <header class="sl-heading sl-heading--center">
+      <h2 id="sl-title-demo-transformation1">TRANSFOR<span>MATIONS</span></h2>
+      <p>Different goals. Different journeys. Real stories with Shadow Labs.</p>
+    </header>
+    <sl-transformations class="sl-carousel" data-section-id="demo-transformation1">
+      <div id="sl-track-demo-transformation1" class="sl-transform__track" data-track role="region" aria-label="TRANSFORMATIONS" tabindex="0">
+
+          <article class="sl-story" data-shopify-editor-block="transformation-0" data-block-id="transformation-block-0">
+            <div class="sl-story__images">
+
+
+                <div class="sl-story__photo sl-story__photo--before">
+
+                    <img src="media/aditya-before.png" alt="Before: Aditya" loading="lazy">
+
+                  <span class="sl-story__label">Before</span>
+                </div>
+
+
+                <div class="sl-story__photo sl-story__photo--after">
+
+                    <img src="media/aditya-after.png" alt="After: Aditya" loading="lazy">
+
+                  <span class="sl-story__label">After</span>
+                </div>
+
+            </div>
+            <div class="sl-story__body">
+              <div class="sl-story__person">
+
+                <img src="media/aditya-after.png" alt="Aditya" loading="lazy" class="sl-story__avatar">
+                <div class="sl-story__identity"><h3>Aditya</h3><p>22 Years</p></div>
+                <span class="sl-story__verified"><span class="sl-check"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Verified Customer</span>
+              </div>
+              <blockquote>“I’ve always struggled to build muscle. With consistent training and better nutrition, I’m finally feeling stronger and more confident.”</blockquote>
+            </div>
+          </article>
+
+          <article class="sl-story" data-shopify-editor-block="transformation-1" data-block-id="transformation-block-1">
+            <div class="sl-story__images">
+
+
+                <div class="sl-story__photo sl-story__photo--before">
+
+                    <img src="media/karan-before.png" alt="Before: Karan" loading="lazy">
+
+                  <span class="sl-story__label">Before</span>
+                </div>
+
+
+                <div class="sl-story__photo sl-story__photo--after">
+
+                    <img src="media/karan-after.png" alt="After: Karan" loading="lazy">
+
+                  <span class="sl-story__label">After</span>
+                </div>
+
+            </div>
+            <div class="sl-story__body">
+              <div class="sl-story__person">
+
+                <img src="media/karan-after.png" alt="Karan" loading="lazy" class="sl-story__avatar">
+                <div class="sl-story__identity"><h3>Karan</h3><p>26 Years</p></div>
+                <span class="sl-story__verified"><span class="sl-check"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Verified Customer</span>
+              </div>
+              <blockquote>“Gaining size was always difficult for me. Staying consistent with my workouts and nutrition helped me build muscle and make real progress.”</blockquote>
+            </div>
+          </article>
+
+          <article class="sl-story" data-shopify-editor-block="transformation-2" data-block-id="transformation-block-2">
+            <div class="sl-story__images">
+
+
+                <div class="sl-story__photo sl-story__photo--before">
+
+                    <img src="media/priya-before.png" alt="Before: Priya" loading="lazy">
+
+                  <span class="sl-story__label">Before</span>
+                </div>
+
+
+                <div class="sl-story__photo sl-story__photo--after">
+
+                    <img src="media/priya-after.png" alt="After: Priya" loading="lazy">
+
+                  <span class="sl-story__label">After</span>
+                </div>
+
+            </div>
+            <div class="sl-story__body">
+              <div class="sl-story__person">
+
+                <img src="media/priya-after.png" alt="Priya" loading="lazy" class="sl-story__avatar">
+                <div class="sl-story__identity"><h3>Priya</h3><p>25</p></div>
+                <span class="sl-story__verified"><span class="sl-check"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Verified Customer</span>
+              </div>
+              <blockquote>“I feel stronger, fitter, and more confident than ever. Building healthy habits has made the biggest difference in my journey.”</blockquote>
+            </div>
+          </article>
+
+      </div>
+      <button class="sl-carousel__arrow sl-carousel__arrow--prev" type="button" aria-label="Previous transformations" aria-controls="sl-track-demo-transformation1" data-prev hidden><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m9 5 7 7-7 7"/>
+
+</svg>
+</button>
+      <button class="sl-carousel__arrow sl-carousel__arrow--next" type="button" aria-label="Next transformations" aria-controls="sl-track-demo-transformation1" data-next hidden><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m9 5 7 7-7 7"/>
+
+</svg>
+</button>
+    </sl-transformations>
+  </div>
+</section>
+
+
+<link rel="stylesheet" href="../assets/sl-sections.css">
+
+
+<style>
+  @font-face{font-family:Oswald;src:url(media/oswald-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  #sl-demo-comparasion2 {
+    --sl-bg: #050805;
+    --sl-text: #ffffff;
+    --sl-muted: #b8b8b8;
+    --sl-accent: #42dd58;
+    --sl-heading-font: Oswald, sans-serif;
+    --sl-body-font: Poppins, sans-serif;
+    --sl-heading-weight: 700;
+    --sl-heading-size: 50px;
+    --sl-body-size: 16px;
+    --sl-width: 1700px;
+    --sl-space-top: 64px;
+    --sl-space-bottom: 64px;
+    --sl-radius: 28px;
+    --sl-gap: 28px;
+  }
+</style>
+
+<section id="sl-demo-comparasion2" class="sl-section sl-comparison" aria-labelledby="sl-title-demo-comparasion2" style="--sl-brand-bg: #51e646; --sl-brand-text: #071005; --sl-intro-width: 28%;">
+  <div class="sl-container sl-comparison__layout">
+    <aside class="sl-comparison__intro">
+      <p class="sl-comparison__eyebrow">WHY SHADOW LABS</p>
+      <h2 id="sl-title-demo-comparasion2">MORE THAN<span>JUST A LABEL.</span></h2>
+      <p class="sl-comparison__description">Not all supplements are the same. We go beyond basic formulation to deliver real quality, transparency and results.</p>
+      <div class="sl-comparison__benefits">
+
+
+            <div class="sl-benefit" data-shopify-editor-block="comparasion-0">
+              <span class="sl-benefit__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M8 3h8v6a4 4 0 0 1-8 0Zm0 2H3v3a5 5 0 0 0 5 5m8-8h5v3a5 5 0 0 1-5 5m-4 0v7m-5 1h10"/>
+
+</svg>
+</span>
+              <div><h3>Real Science</h3><p>Research-backed ingredients with proven benefits.</p></div>
+            </div>
+
+
+
+            <div class="sl-benefit" data-shopify-editor-block="comparasion-1">
+              <span class="sl-benefit__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Zm-4 10 3 3 5-6"/>
+
+</svg>
+</span>
+              <div><h3>Total Transparency</h3><p>No hidden ingredients. What&#39;s on the label is in the tub.</p></div>
+            </div>
+
+
+
+            <div class="sl-benefit" data-shopify-editor-block="comparasion-2">
+              <span class="sl-benefit__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M3 9a3 3 0 0 0 0 6m18-6a3 3 0 0 1 0 6M2 21v-2m20 2v-2"/>
+
+</svg>
+</span>
+              <div><h3>Built for You</h3><p>Formulated for performance, trust and long-term impact.</p></div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </aside>
+    <div class="sl-comparison__scroll" role="region" aria-label="Product feature comparison" tabindex="0">
+      <table class="sl-comparison__table">
+        <caption class="sl-sr-only">SHADOW LABS feature comparison</caption>
+        <thead><tr><th scope="col">FEATURES</th><th scope="col" class="sl-comparison__brand">SHADOW LABS</th><th scope="col">OTHERS</th></tr></thead>
+        <tbody>
+
+
+
+
+
+
+
+
+              <tr data-shopify-editor-block="comparasion-3">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M9 3h6m-5 0v7L4 20c-.3.5 0 1 .7 1h14.6c.7 0 1-.5.7-1l-6-10V3M7 15h10"/>
+
+</svg>
+</span>Formulation Approach</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Research-backed formulation</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Often ready-made formulas</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-4">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 0v6h6M8 12h8m-8 4h8"/>
+
+</svg>
+</span>Ingredient Transparency</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Fully disclosed ingredients &amp; doses</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Ingredients and doses not clear</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-5">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Zm-4 10 3 3 5-6"/>
+
+</svg>
+</span>Quality Testing</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Every batch lab tested</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Limited or no testing</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-6">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <circle cx="10" cy="10" r="7"/><circle cx="10" cy="10" r="3"/><path d="m15 15 6 6"/>
+
+</svg>
+</span>Batch Traceability</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Traceable batch numbers</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>No batch information</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-7">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M3 3v18h18M7 17v-5m5 5V8m5 9V3"/>
+
+</svg>
+</span>Research &amp; Development</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Continuous testing &amp; refinement</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Minimal product development</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-8">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-9.6a5.5 5.5 0 0 0 0-7.8Z"/>
+
+</svg>
+</span>Digestive Comfort</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Easy to digest, minimal discomfort</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>May cause bloating &amp; discomfort</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-9">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M3 9a3 3 0 0 0 0 6m18-6a3 3 0 0 1 0 6M2 21v-2m20 2v-2"/>
+
+</svg>
+</span>Real Customer Results</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Verified real customer transformations</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Mostly marketing claims</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-10">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+
+</svg>
+</span>Price vs Value</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Premium quality, long-term value</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Low cost, lower quality</span></td>
+              </tr>
+
+
+
+              <tr data-shopify-editor-block="comparasion-11">
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+
+</svg>
+</span>Brand Purpose</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">Included: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m5 12 4 4L19 6"/>
+
+</svg>
+</span>Built for performance &amp; community</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">Alternative: </span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <path d="m6 6 12 12M6 18 18 6"/>
+
+</svg>
+</span>Focused mainly on sales</span></td>
+              </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="demo-notice">Local demonstration of the actual Liquid templates with sample product data. Cart actions are simulated; Shopify product forms work in a connected store.</footer><div class="demo-toast" role="status" hidden></div><script>document.querySelectorAll('[data-demo-cart]').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();const toast=document.querySelector('.demo-toast');toast.textContent='Demo only — product form submitted. No purchase or live cart change.';toast.hidden=false;setTimeout(()=>toast.hidden=true,4000)}));document.querySelectorAll('a[href^="#demo-product-"]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const toast=document.querySelector('.demo-toast');toast.textContent='Demo product — choose your store product in Shopify to enable its product page.';toast.hidden=false;setTimeout(()=>toast.hidden=true,4000)}));</script></body></html>

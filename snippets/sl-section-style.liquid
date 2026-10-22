@@ -1,0 +1,25 @@
+{% comment %}Per-instance tokens and fonts; no dependency on the host theme's settings.{% endcomment %}
+{% liquid
+  assign bold_body = section.settings.body_font | font_modify: 'weight', '700'
+%}
+{% style %}
+  {{ section.settings.heading_font | font_face: font_display: 'swap' }}
+  {{ section.settings.body_font | font_face: font_display: 'swap' }}
+  {{ bold_body | font_face: font_display: 'swap' }}
+  #sl-{{ section.id }} {
+    --sl-bg: {{ section.settings.background }};
+    --sl-text: {{ section.settings.text_color }};
+    --sl-muted: {{ section.settings.muted_color }};
+    --sl-accent: {{ section.settings.accent_color }};
+    --sl-heading-font: {{ section.settings.heading_font.family }}, {{ section.settings.heading_font.fallback_families }};
+    --sl-body-font: {{ section.settings.body_font.family }}, {{ section.settings.body_font.fallback_families }};
+    --sl-heading-weight: {{ section.settings.heading_font.weight }};
+    --sl-heading-size: {{ section.settings.heading_size }}px;
+    --sl-body-size: {{ section.settings.body_size }}px;
+    --sl-width: {{ section.settings.max_width }}px;
+    --sl-space-top: {{ section.settings.padding_top }}px;
+    --sl-space-bottom: {{ section.settings.padding_bottom }}px;
+    --sl-radius: {{ section.settings.corner_radius }}px;
+    --sl-gap: {{ section.settings.gap }}px;
+  }
+{% endstyle %}

@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "value-stacks": {
+      "type": "value-stacks",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "product"
+        },
+        "1": {
+          "type": "product"
+        },
+        "2": {
+          "type": "product"
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "transformation": {
+      "type": "transformation",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "story",
+          "settings": {
+            "customer_name": "Aditya",
+            "customer_detail": "22 Years",
+            "testimonial": "I\u2019ve always struggled to build muscle. With consistent training and better nutrition, I\u2019m finally feeling stronger and more confident."
+          }
+        },
+        "1": {
+          "type": "story",
+          "settings": {
+            "customer_name": "Karan",
+            "customer_detail": "26 Years",
+            "testimonial": "Gaining size was always difficult for me. Staying consistent with my workouts and nutrition helped me build muscle and make real progress."
+          }
+        },
+        "2": {
+          "type": "story",
+          "settings": {
+            "customer_name": "Priya",
+            "customer_detail": "25",
+            "testimonial": "I feel stronger, fitter, and more confident than ever. Building healthy habits has made the biggest difference in my journey."
+          }
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    "comparasion": {
+      "type": "comparasion",
+      "settings": {},
+      "blocks": {
+        "0": {
+          "type": "benefit",
+          "settings": {
+            "icon": "trophy",
+            "title": "Real Science",
+            "description": "Research-backed ingredients with proven benefits."
+          }
+        },
+        "1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "Total Transparency",
+            "description": "No hidden ingredients. What's on the label is in the tub."
+          }
+        },
+        "2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "users",
+            "title": "Built for You",
+            "description": "Formulated for performance, trust and long-term impact."
+          }
+        },
+        "3": {
+          "type": "feature",
+          "settings": {
+            "icon": "flask",
+            "title": "Formulation Approach",
+            "brand_value": "Research-backed formulation",
+            "other_value": "Often ready-made formulas"
+          }
+        },
+        "4": {
+          "type": "feature",
+          "settings": {
+            "icon": "document",
+            "title": "Ingredient Transparency",
+            "brand_value": "Fully disclosed ingredients & doses",
+            "other_value": "Ingredients and doses not clear"
+          }
+        },
+        "5": {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Quality Testing",
+            "brand_value": "Every batch lab tested",
+            "other_value": "Limited or no testing"
+          }
+        },
+        "6": {
+          "type": "feature",
+          "settings": {
+            "icon": "search",
+            "title": "Batch Traceability",
+            "brand_value": "Traceable batch numbers",
+            "other_value": "No batch information"
+          }
+        },
+        "7": {
+          "type": "feature",
+          "settings": {
+            "icon": "chart",
+            "title": "Research & Development",
+            "brand_value": "Continuous testing & refinement",
+            "other_value": "Minimal product development"
+          }
+        },
+        "8": {
+          "type": "feature",
+          "settings": {
+            "icon": "heart",
+            "title": "Digestive Comfort",
+            "brand_value": "Easy to digest, minimal discomfort",
+            "other_value": "May cause bloating & discomfort"
+          }
+        },
+        "9": {
+          "type": "feature",
+          "settings": {
+            "icon": "users",
+            "title": "Real Customer Results",
+            "brand_value": "Verified real customer transformations",
+            "other_value": "Mostly marketing claims"
+          }
+        },
+        "10": {
+          "type": "feature",
+          "settings": {
+            "icon": "database",
+            "title": "Price vs Value",
+            "brand_value": "Premium quality, long-term value",
+            "other_value": "Low cost, lower quality"
+          }
+        },
+        "11": {
+          "type": "feature",
+          "settings": {
+            "icon": "target",
+            "title": "Brand Purpose",
+            "brand_value": "Built for performance & community",
+            "other_value": "Focused mainly on sales"
+          }
+        }
+      },
+      "block_order": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    }
+  },
+  "order": [
+    "value-stacks",
+    "transformation",
+    "comparasion"
+  ]
+}

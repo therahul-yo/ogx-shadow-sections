@@ -1,0 +1,43 @@
+{% comment %}The selected variant is the single source of truth for price and availability.{% endcomment %}
+{% liquid
+  assign variant = card_product.selected_or_first_available_variant
+  assign card_image = card_product.featured_image
+  assign form_id = 'sl-product-' | append: section.id | append: '-' | append: card_key
+  assign description = card_description | default: card_product.description | strip_html
+%}
+<article class="sl-product" {{ block_attributes }}>
+  {% if card_product != blank %}
+    <a href="{{ card_product.url }}" class="sl-product__image" aria-label="{{ card_product.title | escape }}">
+      {% if card_image != blank %}{{ card_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '240, 360, 540, 720, 900', sizes: '(min-width: 1100px) 20vw, (min-width: 600px) 32vw, 85vw', alt: card_product.title }}{% else %}{{ 'product-1' | placeholder_svg_tag: 'sl-placeholder' }}{% endif %}
+    </a>
+    <div class="sl-product__body">
+      <h3><a href="{{ card_product.url }}">{{ card_product.title | escape }}</a></h3>
+      {% if description != blank %}<p class="sl-product__description">{{ description | escape }}</p>{% endif %}
+      <sl-product-form data-add-label="{{ section.settings.add_label | escape }}" data-sold-label="{{ section.settings.sold_label | escape }}">
+        {% form 'product', card_product, id: form_id, class: 'sl-product__form' %}
+          <div class="sl-product__prices" aria-live="polite">
+            <span class="sl-product__price" data-price>{{ variant.price | money }}</span>
+            <s data-compare{% unless variant.compare_at_price > variant.price %} hidden{% endunless %}>{{ variant.compare_at_price | money }}</s>
+            {% if variant.compare_at_price > variant.price %}{% assign saving = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round %}{% else %}{% assign saving = 0 %}{% endif %}
+            <span class="sl-product__saving" data-saving{% if saving == 0 %} hidden{% endif %}>{{ section.settings.save_label | escape }} <span data-percent>{{ saving }}</span>%</span>
+          </div>
+          {% if card_product.variants.size > 1 %}
+            <label class="sl-product__variant-label" for="{{ form_id }}-variant">{{ section.settings.variant_label | escape }}</label>
+            <select id="{{ form_id }}-variant" name="id" data-variant>
+              {% for option in card_product.variants %}
+                {% assign option_saving = 0 %}
+                {% if option.compare_at_price > option.price %}{% assign option_saving = option.compare_at_price | minus: option.price | times: 100.0 | divided_by: option.compare_at_price | round %}{% endif %}
+                <option value="{{ option.id }}"{% if option.id == variant.id %} selected{% endif %} data-price="{{ option.price | money | escape }}" data-compare="{{ option.compare_at_price | money | escape }}" data-saving="{{ option_saving }}" data-available="{{ option.available }}">{{ option.title | escape }} — {{ option.price | money }}{% unless option.available %} — {{ section.settings.sold_label | escape }}{% endunless %}</option>
+              {% endfor %}
+            </select>
+          {% else %}<input type="hidden" name="id" value="{{ variant.id }}">{% endif %}
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" name="add" class="sl-button sl-product__add" data-add{% unless variant.available %} disabled{% endunless %}>{% if variant.available %}{{ section.settings.add_label | escape }}{% else %}{{ section.settings.sold_label | escape }}{% endif %}</button>
+        {% endform %}
+      </sl-product-form>
+    </div>
+  {% else %}
+    <div class="sl-product__image">{{ 'product-1' | placeholder_svg_tag: 'sl-placeholder' }}</div>
+    <div class="sl-product__body"><h3>{{ section.settings.empty_product_label | escape }}</h3><p class="sl-product__description">{{ section.settings.empty_product_description | escape }}</p><button class="sl-button sl-product__add" type="button" disabled>{{ section.settings.unavailable_label | escape }}</button></div>
+  {% endif %}
+</article>

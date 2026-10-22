@@ -1,0 +1,509 @@
+{{ 'sl-sections.css' | asset_url | stylesheet_tag }}
+{% render 'sl-section-style', section: section %}
+<section id="sl-{{ section.id }}" class="sl-section sl-comparison" aria-labelledby="sl-title-{{ section.id }}" style="--sl-brand-bg: {{ section.settings.brand_background }}; --sl-brand-text: {{ section.settings.brand_text }}; --sl-intro-width: {{ section.settings.intro_width }}%;">
+  <div class="sl-container sl-comparison__layout">
+    <aside class="sl-comparison__intro">
+      {% if section.settings.eyebrow != blank %}<p class="sl-comparison__eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+      <h2 id="sl-title-{{ section.id }}">{{ section.settings.heading | escape }}<span>{{ section.settings.heading_accent | escape }}</span></h2>
+      {% if section.settings.description != blank %}<p class="sl-comparison__description">{{ section.settings.description | escape }}</p>{% endif %}
+      <div class="sl-comparison__benefits">
+        {% for block in section.blocks %}
+          {% if block.type == 'benefit' %}
+            <div class="sl-benefit" {{ block.shopify_attributes }}>
+              <span class="sl-benefit__icon">{% render 'sl-icon', name: block.settings.icon %}</span>
+              <div><h3>{{ block.settings.title | escape }}</h3>{% if block.settings.description != blank %}<p>{{ block.settings.description | escape }}</p>{% endif %}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </aside>
+    <div class="sl-comparison__scroll" role="region" aria-label="Product feature comparison" tabindex="0">
+      <table class="sl-comparison__table">
+        <caption class="sl-sr-only">{{ section.settings.brand_heading | escape }} {{ section.settings.table_caption | escape }}</caption>
+        <thead><tr><th scope="col">{{ section.settings.feature_heading | escape }}</th><th scope="col" class="sl-comparison__brand">{{ section.settings.brand_heading | escape }}</th><th scope="col">{{ section.settings.other_heading | escape }}</th></tr></thead>
+        <tbody>
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <tr {{ block.shopify_attributes }}>
+                <th scope="row"><span class="sl-comparison__cell"><span class="sl-comparison__feature-icon">{% render 'sl-icon', name: block.settings.icon %}</span>{{ block.settings.title | escape }}</span></th>
+                <td class="sl-comparison__brand"><span class="sl-comparison__cell"><span class="sl-comparison__status"><span class="sl-sr-only">{{ section.settings.positive_label | escape }}: </span>{% render 'sl-icon', name: 'check' %}</span>{{ block.settings.brand_value | escape }}</span></td>
+                <td><span class="sl-comparison__cell"><span class="sl-comparison__status sl-comparison__status--other"><span class="sl-sr-only">{{ section.settings.negative_label | escape }}: </span>{% render 'sl-icon', name: 'cross' %}</span>{{ block.settings.other_value | escape }}</span></td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Brand comparison",
+  "tag": "section",
+  "class": "sl-section-host",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Introduction"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "WHY SHADOW LABS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "MORE THAN"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent heading",
+      "default": "JUST A LABEL."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Not all supplements are the same. We go beyond basic formulation to deliver real quality, transparency and results."
+    },
+    {
+      "type": "header",
+      "content": "Table"
+    },
+    {
+      "type": "text",
+      "id": "feature_heading",
+      "label": "Features heading",
+      "default": "FEATURES"
+    },
+    {
+      "type": "text",
+      "id": "brand_heading",
+      "label": "Your brand heading",
+      "default": "SHADOW LABS"
+    },
+    {
+      "type": "text",
+      "id": "other_heading",
+      "label": "Other brands heading",
+      "default": "OTHERS"
+    },
+    {
+      "type": "text",
+      "id": "table_caption",
+      "label": "Accessible table description",
+      "default": "feature comparison"
+    },
+    {
+      "type": "text",
+      "id": "positive_label",
+      "label": "Positive icon label",
+      "default": "Included"
+    },
+    {
+      "type": "text",
+      "id": "negative_label",
+      "label": "Negative icon label",
+      "default": "Alternative"
+    },
+    {
+      "type": "color",
+      "id": "brand_background",
+      "label": "Brand column background",
+      "default": "#51e646"
+    },
+    {
+      "type": "color",
+      "id": "brand_text",
+      "label": "Brand column text",
+      "default": "#071005"
+    },
+    {
+      "type": "range",
+      "id": "intro_width",
+      "label": "Introduction width",
+      "min": 20,
+      "max": 40,
+      "step": 1,
+      "default": 28,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "oswald_n7"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "poppins_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 50,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#050805"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Secondary text",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#42dd58"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum content width",
+      "min": 900,
+      "max": 1900,
+      "step": 20,
+      "default": 1700,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Content gap",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Introduction benefit",
+      "limit": 5,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "document",
+              "label": "Document"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "search",
+              "label": "Search"
+            },
+            {
+              "value": "chart",
+              "label": "Chart"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "users",
+              "label": "People"
+            },
+            {
+              "value": "database",
+              "label": "Database"
+            },
+            {
+              "value": "target",
+              "label": "Target"
+            },
+            {
+              "value": "trophy",
+              "label": "Trophy"
+            }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Real Science"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Research-backed ingredients with proven benefits."
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Comparison row",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "flask",
+              "label": "Flask"
+            },
+            {
+              "value": "document",
+              "label": "Document"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "search",
+              "label": "Search"
+            },
+            {
+              "value": "chart",
+              "label": "Chart"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "users",
+              "label": "People"
+            },
+            {
+              "value": "database",
+              "label": "Database"
+            },
+            {
+              "value": "target",
+              "label": "Target"
+            },
+            {
+              "value": "trophy",
+              "label": "Trophy"
+            }
+          ],
+          "default": "flask"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature",
+          "default": "Formulation Approach"
+        },
+        {
+          "type": "text",
+          "id": "brand_value",
+          "label": "Your brand",
+          "default": "Research-backed formulation"
+        },
+        {
+          "type": "text",
+          "id": "other_value",
+          "label": "Other brands",
+          "default": "Often ready-made formulas"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 20,
+  "presets": [
+    {
+      "name": "Brand comparison",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "trophy",
+            "title": "Real Science",
+            "description": "Research-backed ingredients with proven benefits."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "title": "Total Transparency",
+            "description": "No hidden ingredients. What's on the label is in the tub."
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "icon": "users",
+            "title": "Built for You",
+            "description": "Formulated for performance, trust and long-term impact."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "flask",
+            "title": "Formulation Approach",
+            "brand_value": "Research-backed formulation",
+            "other_value": "Often ready-made formulas"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "document",
+            "title": "Ingredient Transparency",
+            "brand_value": "Fully disclosed ingredients & doses",
+            "other_value": "Ingredients and doses not clear"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "shield",
+            "title": "Quality Testing",
+            "brand_value": "Every batch lab tested",
+            "other_value": "Limited or no testing"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "search",
+            "title": "Batch Traceability",
+            "brand_value": "Traceable batch numbers",
+            "other_value": "No batch information"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "chart",
+            "title": "Research & Development",
+            "brand_value": "Continuous testing & refinement",
+            "other_value": "Minimal product development"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "heart",
+            "title": "Digestive Comfort",
+            "brand_value": "Easy to digest, minimal discomfort",
+            "other_value": "May cause bloating & discomfort"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "users",
+            "title": "Real Customer Results",
+            "brand_value": "Verified real customer transformations",
+            "other_value": "Mostly marketing claims"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "database",
+            "title": "Price vs Value",
+            "brand_value": "Premium quality, long-term value",
+            "other_value": "Low cost, lower quality"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "target",
+            "title": "Brand Purpose",
+            "brand_value": "Built for performance & community",
+            "other_value": "Focused mainly on sales"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

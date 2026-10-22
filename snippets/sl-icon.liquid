@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  {% case name %}
+    {% when 'check' %}<path d="m5 12 4 4L19 6"/>
+    {% when 'cross' %}<path d="m6 6 12 12M6 18 18 6"/>
+    {% when 'arrow' %}<path d="M4 12h16m-6-6 6 6-6 6"/>
+    {% when 'chevron' %}<path d="m9 5 7 7-7 7"/>
+    {% when 'flask' %}<path d="M9 3h6m-5 0v7L4 20c-.3.5 0 1 .7 1h14.6c.7 0 1-.5.7-1l-6-10V3M7 15h10"/>
+    {% when 'document' %}<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Zm0 0v6h6M8 12h8m-8 4h8"/>
+    {% when 'shield' %}<path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Zm-4 10 3 3 5-6"/>
+    {% when 'search' %}<circle cx="10" cy="10" r="7"/><circle cx="10" cy="10" r="3"/><path d="m15 15 6 6"/>
+    {% when 'chart' %}<path d="M3 3v18h18M7 17v-5m5 5V8m5 9V3"/>
+    {% when 'heart' %}<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 22l8.8-9.6a5.5 5.5 0 0 0 0-7.8Z"/>
+    {% when 'database' %}<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+    {% when 'target' %}<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    {% when 'trophy' %}<path d="M8 3h8v6a4 4 0 0 1-8 0Zm0 2H3v3a5 5 0 0 0 5 5m8-8h5v3a5 5 0 0 1-5 5m-4 0v7m-5 1h10"/>
+    {% else %}<circle cx="12" cy="7" r="3"/><path d="M6 21v-3a6 6 0 0 1 12 0v3M3 9a3 3 0 0 0 0 6m18-6a3 3 0 0 1 0 6M2 21v-2m20 2v-2"/>
+  {% endcase %}
+</svg>

@@ -1,0 +1,92 @@
+{
+  "stories": [
+    [
+      "Aditya",
+      "22 Years",
+      "I’ve always struggled to build muscle. With consistent training and better nutrition, I’m finally feeling stronger and more confident."
+    ],
+    [
+      "Karan",
+      "26 Years",
+      "Gaining size was always difficult for me. Staying consistent with my workouts and nutrition helped me build muscle and make real progress."
+    ],
+    [
+      "Priya",
+      "25",
+      "I feel stronger, fitter, and more confident than ever. Building healthy habits has made the biggest difference in my journey."
+    ]
+  ],
+  "features": [
+    [
+      "flask",
+      "Formulation Approach",
+      "Research-backed formulation",
+      "Often ready-made formulas"
+    ],
+    [
+      "document",
+      "Ingredient Transparency",
+      "Fully disclosed ingredients & doses",
+      "Ingredients and doses not clear"
+    ],
+    [
+      "shield",
+      "Quality Testing",
+      "Every batch lab tested",
+      "Limited or no testing"
+    ],
+    [
+      "search",
+      "Batch Traceability",
+      "Traceable batch numbers",
+      "No batch information"
+    ],
+    [
+      "chart",
+      "Research & Development",
+      "Continuous testing & refinement",
+      "Minimal product development"
+    ],
+    [
+      "heart",
+      "Digestive Comfort",
+      "Easy to digest, minimal discomfort",
+      "May cause bloating & discomfort"
+    ],
+    [
+      "users",
+      "Real Customer Results",
+      "Verified real customer transformations",
+      "Mostly marketing claims"
+    ],
+    [
+      "database",
+      "Price vs Value",
+      "Premium quality, long-term value",
+      "Low cost, lower quality"
+    ],
+    [
+      "target",
+      "Brand Purpose",
+      "Built for performance & community",
+      "Focused mainly on sales"
+    ]
+  ],
+  "benefits": [
+    [
+      "trophy",
+      "Real Science",
+      "Research-backed ingredients with proven benefits."
+    ],
+    [
+      "shield",
+      "Total Transparency",
+      "No hidden ingredients. What's on the label is in the tub."
+    ],
+    [
+      "users",
+      "Built for You",
+      "Formulated for performance, trust and long-term impact."
+    ]
+  ]
+}

@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shadow Labs — Shopify Section Demo</title><style>body{margin:0;background:#050805} .demo-bar{font:13px/1.5 system-ui,sans-serif;color:#c3c9c3;background:#101510;padding:14px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}.demo-bar a{color:#61e36f;margin-right:18px}.demo-notice{font:14px system-ui;color:#ccc;background:#121812;padding:20px;text-align:center}.demo-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:100;background:#fff;color:#111;border-radius:10px;padding:16px 24px;box-shadow:0 8px 30px #0008;font:14px system-ui}</style></head><body><nav class="demo-bar" aria-label="Demonstration navigation"><span>Shopify Liquid sections · assessment demonstration</span><div><a href="#sl-demo-value-stacks0">Value stacks</a><a href="#sl-demo-transformation1">Transformations</a><a href="#sl-demo-comparasion2">Comparison</a></div></nav><link rel="stylesheet" href="../assets/sl-sections.css">
+<script src="../assets/sl-sections.js" defer="defer"></script>
+
+
+<style>
+  @font-face{font-family:Oswald;src:url(media/oswald-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-regular.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:Poppins;src:url(media/poppins-bold.woff2) format('woff2');font-weight:700;font-style:normal;font-display:swap}
+  #sl-demo-value-stacks3 {
+    --sl-bg: #050805;
+    --sl-text: #ffffff;
+    --sl-muted: #b8b8b8;
+    --sl-accent: #42dd58;
+    --sl-heading-font: Oswald, sans-serif;
+    --sl-body-font: Poppins, sans-serif;
+    --sl-heading-weight: 700;
+    --sl-heading-size: 64px;
+    --sl-body-size: 16px;
+    --sl-width: 1700px;
+    --sl-space-top: 48px;
+    --sl-space-bottom: 48px;
+    --sl-radius: 28px;
+    --sl-gap: 28px;
+  }
+</style>
+
+<section id="sl-demo-value-stacks3" class="sl-section sl-stacks" aria-labelledby="sl-title-demo-value-stacks3" style="--sl-product-columns: 3; --sl-promo-width: 33%; --sl-card-bg: #ffffff; --sl-card-text: #111111; --sl-price: #f02e29;">
+  <div class="sl-container sl-stacks__layout sl-stacks__layout--no-promo">
+    <div class="sl-stacks__panel">
+      <header class="sl-heading sl-heading--center sl-stacks__heading">
+        <div class="sl-stacks__title"><span class="sl-stacks__badge">MOST POPULAR</span><h2 id="sl-title-demo-value-stacks3">VALUE STACKS</h2></div>
+        <p class="sl-stacks__subtitle"><span>Better together. More results.</span></p>
+      </header>
+      <div class="sl-stacks__products">
+
+
+
+
+<article class="sl-product" >
+
+    <a href="#demo-product-0" class="sl-product__image" aria-label="Mass Builder Stack">
+      <img src="media/mass-builder.png" alt="Mass Builder Stack" loading="lazy">
+    </a>
+    <div class="sl-product__body">
+      <h3><a href="#demo-product-0">Mass Builder Stack</a></h3>
+      <p class="sl-product__description">Your everyday foundation for calorie intake, strength training and muscle-building goals.</p>
+      <sl-product-form data-add-label="ADD TO CART" data-sold-label="SOLD OUT">
+        <form class="sl-product__form" data-demo-cart id="sl-product-demo-value-stacks3-variant-test">
+          <div class="sl-product__prices" aria-live="polite">
+            <span class="sl-product__price" data-price>Rs. 2,099</span>
+            <s data-compare>Rs. 2,298</s>
+
+            <span class="sl-product__saving" data-saving>Save <span data-percent>9</span>%</span>
+          </div>
+
+            <label class="sl-product__variant-label" for="sl-product-demo-value-stacks3-variant-test-variant">Choose option</label>
+            <select id="sl-product-demo-value-stacks3-variant-test-variant" name="id" data-variant>
+
+
+
+                <option value="401" selected data-price="Rs. 2,099" data-compare="Rs. 2,298" data-saving="9" data-available="true">Available — discounted — Rs. 2,099</option>
+
+
+
+                <option value="402" data-price="Rs. 2,499" data-compare="Rs. 0" data-saving="0" data-available="false">Sold out — regular price — Rs. 2,499 — SOLD OUT</option>
+
+            </select>
+
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" name="add" class="sl-button sl-product__add" data-add>ADD TO CART</button>
+        </form>
+      </sl-product-form>
+    </div>
+
+</article>
+
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="demo-notice">Local demonstration of the actual Liquid templates with sample product data. Cart actions are simulated; Shopify product forms work in a connected store.</footer><div class="demo-toast" role="status" hidden></div><script>document.querySelectorAll('[data-demo-cart]').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();const toast=document.querySelector('.demo-toast');toast.textContent='Demo only — product form submitted. No purchase or live cart change.';toast.hidden=false;setTimeout(()=>toast.hidden=true,4000)}));document.querySelectorAll('a[href^="#demo-product-"]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();const toast=document.querySelector('.demo-toast');toast.textContent='Demo product — choose your store product in Shopify to enable its product page.';toast.hidden=false;setTimeout(()=>toast.hidden=true,4000)}));</script></body></html>

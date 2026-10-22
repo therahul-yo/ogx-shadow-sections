@@ -1,0 +1,311 @@
+{{ 'sl-sections.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'sl-sections.js' | asset_url }}" defer="defer"></script>
+{% render 'sl-section-style', section: section %}
+<section id="sl-{{ section.id }}" class="sl-section sl-transform" aria-labelledby="sl-title-{{ section.id }}" style="--sl-columns: {{ section.settings.columns }};">
+  <div class="sl-container">
+    <header class="sl-heading sl-heading--center">
+      <h2 id="sl-title-{{ section.id }}">{{ section.settings.heading | escape }}<span>{{ section.settings.heading_accent | escape }}</span></h2>
+      {% if section.settings.subtitle != blank %}<p>{{ section.settings.subtitle | escape }}</p>{% endif %}
+    </header>
+    <sl-transformations class="sl-carousel" data-section-id="{{ section.id }}">
+      <div id="sl-track-{{ section.id }}" class="sl-transform__track" data-track role="region" aria-label="{{ section.settings.heading | append: section.settings.heading_accent | escape }}" tabindex="0">
+        {% for block in section.blocks %}
+          <article class="sl-story" {{ block.shopify_attributes }} data-block-id="{{ block.id }}">
+            <div class="sl-story__images">
+              {% for position in (1..2) %}
+                {% liquid
+                  if position == 1
+                    assign picture = block.settings.before_image
+                    assign label = section.settings.before_label
+                    assign photo_class = 'sl-story__photo--before'
+                  else
+                    assign picture = block.settings.after_image
+                    assign label = section.settings.after_label
+                    assign photo_class = 'sl-story__photo--after'
+                  endif
+                  assign photo_alt = label | append: ': ' | append: block.settings.customer_name
+                %}
+                <div class="sl-story__photo {{ photo_class }}">
+                  {% if picture != blank %}
+                    {{ picture | image_url: width: 900 | image_tag: loading: 'lazy', widths: '240, 360, 540, 720, 900', sizes: '(min-width: 990px) 16vw, (min-width: 600px) 25vw, 43vw', alt: photo_alt }}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'sl-placeholder' }}
+                  {% endif %}
+                  {% if label != blank %}<span class="sl-story__label">{{ label | escape }}</span>{% endif %}
+                </div>
+              {% endfor %}
+            </div>
+            <div class="sl-story__body">
+              <div class="sl-story__person">
+                {% assign avatar = block.settings.avatar | default: block.settings.after_image %}
+                {% if avatar != blank %}{{ avatar | image_url: width: 120, height: 120, crop: 'center' | image_tag: loading: 'lazy', class: 'sl-story__avatar', alt: block.settings.customer_name }}{% endif %}
+                <div class="sl-story__identity"><h3>{{ block.settings.customer_name | default: 'Customer story' | escape }}</h3>{% if block.settings.customer_detail != blank %}<p>{{ block.settings.customer_detail | escape }}</p>{% endif %}</div>
+                {% if block.settings.verified %}<span class="sl-story__verified"><span class="sl-check">{% render 'sl-icon', name: 'check' %}</span>{{ section.settings.verified_label | escape }}</span>{% endif %}
+              </div>
+              {% if block.settings.testimonial != blank %}<blockquote>“{{ block.settings.testimonial | escape }}”</blockquote>{% endif %}
+            </div>
+          </article>
+        {% else %}
+          <p class="sl-empty">Add customer story blocks in the theme editor.</p>
+        {% endfor %}
+      </div>
+      <button class="sl-carousel__arrow sl-carousel__arrow--prev" type="button" aria-label="Previous transformations" aria-controls="sl-track-{{ section.id }}" data-prev hidden>{% render 'sl-icon', name: 'chevron' %}</button>
+      <button class="sl-carousel__arrow sl-carousel__arrow--next" type="button" aria-label="Next transformations" aria-controls="sl-track-{{ section.id }}" data-next hidden>{% render 'sl-icon', name: 'chevron' %}</button>
+    </sl-transformations>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Transformations",
+  "tag": "section",
+  "class": "sl-section-host",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "TRANSFOR"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Accent heading",
+      "default": "MATIONS"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Different goals. Different journeys. Real stories with Shadow Labs."
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Before"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After label",
+      "default": "After"
+    },
+    {
+      "type": "text",
+      "id": "verified_label",
+      "label": "Verified label",
+      "default": "Verified Customer"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Desktop cards per view",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading font",
+      "default": "oswald_n7"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Body font",
+      "default": "poppins_n4"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading size",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 42,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body text size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#050805"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "muted_color",
+      "label": "Secondary text",
+      "default": "#b8b8b8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent",
+      "default": "#42dd58"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum content width",
+      "min": 900,
+      "max": 1900,
+      "step": 20,
+      "default": 1700,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "Content gap",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "default": 28,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Customer story",
+      "settings": [
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Customer name",
+          "default": "Customer"
+        },
+        {
+          "type": "text",
+          "id": "customer_detail",
+          "label": "Customer details",
+          "default": "25 Years"
+        },
+        {
+          "type": "image_picker",
+          "id": "before_image",
+          "label": "Before photo"
+        },
+        {
+          "type": "image_picker",
+          "id": "after_image",
+          "label": "After photo"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar (optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verified customer",
+          "default": true
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial",
+          "label": "Testimonial",
+          "default": "Share this customer’s experience."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Transformations",
+      "blocks": [
+        {
+          "type": "story",
+          "settings": {
+            "customer_name": "Aditya",
+            "customer_detail": "22 Years",
+            "testimonial": "I’ve always struggled to build muscle. With consistent training and better nutrition, I’m finally feeling stronger and more confident."
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "customer_name": "Karan",
+            "customer_detail": "26 Years",
+            "testimonial": "Gaining size was always difficult for me. Staying consistent with my workouts and nutrition helped me build muscle and make real progress."
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "customer_name": "Priya",
+            "customer_detail": "25",
+            "testimonial": "I feel stronger, fitter, and more confident than ever. Building healthy habits has made the biggest difference in my journey."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
